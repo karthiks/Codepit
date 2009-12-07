@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPUtils", "ASPUtils.csproj", "{1DD801E7-AC6A-4064-9D06-FE4DD785353E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASPUtils.Tests.Unit", "..\ASPUtils.Tests.Unit\ASPUtils.Tests.Unit.csproj", "{D7FC0B17-8407-4FDA-B3E5-7A37D4BC909F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DD801E7-AC6A-4064-9D06-FE4DD785353E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DD801E7-AC6A-4064-9D06-FE4DD785353E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DD801E7-AC6A-4064-9D06-FE4DD785353E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DD801E7-AC6A-4064-9D06-FE4DD785353E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7FC0B17-8407-4FDA-B3E5-7A37D4BC909F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7FC0B17-8407-4FDA-B3E5-7A37D4BC909F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7FC0B17-8407-4FDA-B3E5-7A37D4BC909F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7FC0B17-8407-4FDA-B3E5-7A37D4BC909F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
