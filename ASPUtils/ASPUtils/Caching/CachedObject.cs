@@ -6,6 +6,23 @@ namespace robcthegeek.ASPUtils.Caching
     {
         ICachedObjectStore<T> ObjectStore { get; set; }
         Func<T> RefreshDelegate { get; set; }
+        public DateTime SlidingExpiration { get; private set; }
+
+        private IDateTimeProvider dateTimeProvider;
+        public IDateTimeProvider DateTimeProvider
+        {
+            get
+            {
+                if (dateTimeProvider == null)
+                    dateTimeProvider = new SystemDateTimeProvider();
+                return dateTimeProvider;
+            }
+
+            set
+            {
+                dateTimeProvider = value;
+            }
+        }
 
         public T Data
         {
@@ -28,6 +45,13 @@ namespace robcthegeek.ASPUtils.Caching
         public void Refresh()
         {
             // Implement
+        }
+
+        public void SetSlidingExpiry(TimeSpan timeSpan)
+        {
+            // Add TimeSpan to Current DateTime and Set SlidingExpiration
+            var newSlidingExpiration = dateTimeProvider.Now.Add(timeSpan);
+            SlidingExpiration = newSlidingExpiration;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using robcthegeek.ASPUtils.Caching;
+﻿using System;
+using robcthegeek.ASPUtils.Caching;
 using Xunit;
 
 namespace robcthegeek.ASPUtils.Tests.Unit.Caching
@@ -9,7 +10,7 @@ namespace robcthegeek.ASPUtils.Tests.Unit.Caching
 
         public InMemoryObjectCache()
         {
-            
+
         }
 
         public InMemoryObjectCache(string startupData)
@@ -63,6 +64,13 @@ namespace robcthegeek.ASPUtils.Tests.Unit.Caching
             return cache;
         }
 
+        CachedObject<string> SetupDateTimeProvider(CachedObject<string> cache, DateTime dateTime)
+        {
+            var provider = new FixedDateTimeProvider(dateTime);
+            cache.DateTimeProvider = provider;
+            return cache;
+        }
+
         [Fact]
         public void Data_Ctor_CallsRefresh()
         {
@@ -106,7 +114,28 @@ namespace robcthegeek.ASPUtils.Tests.Unit.Caching
             Assert.Equal("Refreshed", data);
         }
 
+        [Fact]
+        public void SetSlidingExpiry_TwoMinuteTimeSpan_SlidingExpirationTimeTwoMinutesFromCurrentTime()
+        {
+            var expectedExpiration = new DateTime(2009, 12, 08, 20, 0, 0);
+            var cache = CreateWithEmptyCache();
+            SetupDateTimeProvider(cache, new DateTime(2009, 12, 08, 19, 58, 0));
+            cache.SetSlidingExpiry(new TimeSpan(0, 0, 2, 0));
+            Assert.Equal(expectedExpiration, cache.SlidingExpiration);
+        }
+
+        [Fact]
+        public void GetData_WithinSlidingExpiration_SlidingExpirationTimeShifts()
+        {
+            var expectedExpiration = new DateTime(2009, 12, 08, 20, 0, 0);
+            var cache = CreateWithEmptyCache();
+            SetupDateTimeProvider(cache, new DateTime(2009, 12, 08, 19, 58, 0));
+            cache.SetSlidingExpiry(new TimeSpan(0, 0, 2, 0));
+        }
         // TODO: Add Sliding Expiry
+        // - When We Get Data, Sliding Expiration Should be Reset.
+        // - Get Data After Sliding Expiration then Refresh Should be Called.
+        
         // TODO: Add Absolute Expiry
         // TODO: Add Repeating Expiry
     }
