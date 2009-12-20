@@ -10,7 +10,33 @@
 	        var rolls = new Array();
 
 	        function isSpare(frameIndex) {
-	            return rolls[frameIndex] + rolls[frameIndex + 1] == 10;
+	            return rollsValue(frameIndex) + rollsValue(frameIndex + 1) == 10;
+	        }
+
+	        function isStrike(frameIndex) {
+	            return rollsValue(frameIndex) == 10;
+	        }
+
+	        function rollsValue(frameIndex) {
+	            var parse = parseInt(rolls[frameIndex]);
+	            if (isNaN(parse))
+	                return 0;
+	            else
+	                return parse;
+	        }
+
+	        function sumOfPinsInFrame(frameIndex) {
+	            return rollsValue(frameIndex) + rollsValue(frameIndex + 1);
+	        }
+
+	        function strikeBonus(frameIndex) {
+	            return 10 +
+	                rollsValue(frameIndex + 1) +
+	                rollsValue(frameIndex + 2);
+	        }
+
+	        function spareBonus(frameIndex) {
+	            return 10 + rollsValue(frameIndex + 2);
 	        }
 	        
 	        this.roll = function(pins) {
@@ -20,17 +46,21 @@
 	        this.score = function() {
 	            var score = 0;
 	            var frameIndex = 0;
-	            
+
 	            for (var frame = 0; frame < 10; frame++) {
 
-	                if (isSpare(frame)) {
-	                    score += 10 + rolls[frameIndex + 2];
+	                if (isStrike(frame)) {
+	                    score += strikeBonus(frameIndex);
+	                    frameIndex++;
+	                }
+	                else if (isSpare(frame)) {
+	                    score += spareBonus(frameIndex);
+	                    frameIndex += 2;
 	                }
 	                else {
-	                    score += rolls[frameIndex] + rolls[frameIndex + 1];
+	                    score += sumOfPinsInFrame(frameIndex);
+	                    frameIndex += 2;	                    
 	                }
-
-	                frameIndex += 2;
 	            }
 	            return score;
 	        };
@@ -57,35 +87,51 @@
 	            game.roll(5);
 	        }
 
+	        function rollStrike() {
+	            game.roll(10);
+	        }
+
             module("BowlingGame");
 
-	        test("ScoreZeroIfNoPins", function() {
+	        test("20 0-Pin Rolls Scores Zero", function() {
 	            NewGame();
 	            rollMany(20, 0);
-	            equals(game.score(), 0, "Game score S/B zero if no pins knocked down");
+	            equals(game.score(), 0);
 	        });
 
-	        test("Score20If20Pins", function() {
+	        test("20 1-Pin Rolls Scores 20", function() {
 	            NewGame();
 	            rollMany(20, 1);
-	            equal(game.score(), 20, "Game score s/b 20 if twenty pins knocked down");
+	            equal(game.score(), 20);
 	        });
 
-	        test("testOneSpare", function() {
+	        test("Game with One Spare and 3 Returns 16", function() {
 	            NewGame();
 	            rollSpare();
 	            game.roll(3);
 	            rollMany(17, 0);
-	            equal(game.score(), 16, "Game score s/b 16 with spare");
+	            equal(game.score(), 16);
 	        });
 
-	        test("testOneStrike", function() {
+	        test("Game with One Strike, 3 and 4 Scores 24", function() {
 	            NewGame();
-	            game.roll(10); // strike
+	            rollStrike();
 	            game.roll(3);
 	            game.roll(4);
 	            rollMany(16, 0);
-	            equal(game.score(), 24, "Game w/ Strike, 3 and 4 should score 24")
+	            equal(game.score(), 24)
+	        });
+
+	        test("Can Calculate Score for Incomplete Game", function() {
+	            NewGame();
+	            game.roll(3);
+	            equal(game.score(), 3);
+	        });
+
+	        test("Perfect Game Scores 300", function() {
+	            NewGame();
+	            rollMany(12, 10);
+	            equal(game.score(), 300);
 	        });
 	    }
 
