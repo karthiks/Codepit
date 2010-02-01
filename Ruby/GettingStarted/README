@@ -1,3 +1,14 @@
-== GettingStarted
+Ruby "Getting Started" Kata
+===========================
 
-You should document your project here.
+
+- Quick kata to get used to (some of) the basics of Ruby.
+
+
+- Create Project
+- Creating First Test
+    - Create PercentMax Test for "0%".
+- Class Creation
+    - Create PercentMax
+    - See Test Fail
+    - Override/Define "to_s" and Get Test Passing
