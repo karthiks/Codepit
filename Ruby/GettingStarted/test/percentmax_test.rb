@@ -1,15 +1,12 @@
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
-
 $:.unshift File.join(File.dirname(__FILE__),'..','lib')
 
 require 'test/unit'
-require 'percentmax'
+require 'percentstring'
 
-class PercentMaxTest < Test::Unit::TestCase
+class PercentStringTest < Test::Unit::TestCase
 
   def percent_s(value)
-    PercentMax.new(value).to_s
+    PercentString.new(value).to_s
   end
 
   def test_zero_string_returns_0_pc
@@ -50,6 +47,10 @@ class PercentMaxTest < Test::Unit::TestCase
 
   def test_onehundred_point_sevenfivefive_string_returns_100_pc
     assert_equal "100%", percent_s(100.755)
+  end
+
+  def test_nonnumeric_string_string_raises_argumenterror
+    assert_raise(ArgumentError) { percent_s("blah") }
   end
 
 end

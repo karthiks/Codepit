@@ -25,4 +25,3 @@ Ruby "Getting Started" Kata
     - 100.755 = 100%
 - Add Tests for Invalid Input
     - Non-Numeric String
-    - Object?
