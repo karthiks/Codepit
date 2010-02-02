@@ -7,9 +7,9 @@ Ruby "Getting Started" Kata
 
 - Create Project
 - Creating First Test (http://www.ruby-doc.org/stdlib/libdoc/test/unit/rdoc/classes/Test/Unit.html)
-    - Create PercentMax Test for "0%".
+    - Create PercentString Test for "0%".
 - Class Creation
-    - Create PercentMax
+    - Create PercentString
     - See Test Fail
     - Override/Define "to_s" and Get Test Passing
 - Add Tests for:
