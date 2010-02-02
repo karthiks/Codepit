@@ -3,10 +3,11 @@
 
 class PercentMax
   def initialize(max)
-    
+    @max = max
   end
 
   def to_s
-    "0%"
+    pc = (@max > 100) ? 100 : (@max < 0) ? 0 : @max
+    "#{pc}%"
   end
 end

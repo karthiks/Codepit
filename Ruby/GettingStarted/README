@@ -12,3 +12,13 @@ Ruby "Getting Started" Kata
     - Create PercentMax
     - See Test Fail
     - Override/Define "to_s" and Get Test Passing
+- Add Tests for:
+    - 50%
+    - 100%
+    - 100% (>100)
+    - 0% (<0)
+- Add Tests for Formatting
+    - 10.11 = 10.11%
+    - 10.115 = 10.11%
+    - 60.8723 = 60.87%
+    - 0.001 = 0%
