@@ -6,7 +6,7 @@ Ruby "Getting Started" Kata
 
 
 - Create Project
-- Creating First Test
+- Creating First Test (http://www.ruby-doc.org/stdlib/libdoc/test/unit/rdoc/classes/Test/Unit.html)
     - Create PercentMax Test for "0%".
 - Class Creation
     - Create PercentMax
@@ -22,3 +22,7 @@ Ruby "Getting Started" Kata
     - 10.115 = 10.11%
     - 60.8723 = 60.87%
     - 0.001 = 0%
+    - 100.755 = 100%
+- Add Tests for Invalid Input
+    - Non-Numeric String
+    - Object?
