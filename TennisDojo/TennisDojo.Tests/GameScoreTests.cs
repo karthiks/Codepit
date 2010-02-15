@@ -27,6 +27,13 @@ namespace TennisDojo.Tests
         }
 
         [Fact]
+        public void Ctor_NoPointsScore_IsDeuceIsFalse()
+        {
+            var score = CreateGameScore();
+            Assert.False(score.IsDeuce);
+        }
+
+        [Fact]
         public void Player1Score_Player1ScoresOnce_Returns1()
         {
             var score = CreateGameScore()
@@ -109,6 +116,30 @@ namespace TennisDojo.Tests
                 .ScorePointsForPlayer2(3);
             Assert.True(score.Player2HasAdvantage);
         }
+
+        [Fact]
+        public void Player1HasAdvantage_InDeuce_ReturnsFalse()
+        {
+            var score = CreateGameScore()
+                .SetDuece();
+            Assert.False(score.Player1HasAdvantage);
+        }
+
+        [Fact]
+        public void Player2HasAdvantage_InDeuce_ReturnsFalse()
+        {
+            var score = CreateGameScore()
+                .SetDuece();
+            Assert.False(score.Player2HasAdvantage);
+        }
+
+        [Fact]
+        public void IsDeuce_BothPlayersScored3x_ReturnsTrue()
+        {
+            var score = CreateGameScore()
+                .SetDuece();
+            Assert.True(score.IsDeuce);
+        }
     }
 
 
@@ -132,5 +163,11 @@ namespace TennisDojo.Tests
             return score;
         }
 
+        public static GameScore SetDuece(this GameScore score)
+        {
+            return score
+                .ScorePointsForPlayer1(3)
+                .ScorePointsForPlayer2(3);
+        }
     }
 }

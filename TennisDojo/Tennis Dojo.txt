@@ -55,3 +55,13 @@ Basic "Advantage" Tests
 		- Simplest Thing? Return Player1Score == 3.
 	- Player 2 Scores 3x, Player 1 Zero = Player2HasAdvantage.
 		- Simplest Thing? Return Player2Score == 3.
+Basic "Deuce" Tests
+	- IsDeuce == False on Ctor.
+		- Simply Return False.
+	- Player 1 Scores 3, Player 2 Scores 3 == IsDeuce
+		- Return Player1Score == 3 && Player2Score == 3
+	- Player 1 Does Not Have Advantage in Deuce
+		- Added Method "ScoreHasAdvantage"
+		- Reduce Code Dupe - New Extension Method - ToDeuce
+	- Player 2 Does Not Have Advantage in Deuce
+		- Update Getter to Use "ScoreHasAdvantage"
