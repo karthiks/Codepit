@@ -34,6 +34,20 @@ namespace TennisDojo.Tests
         }
 
         [Fact]
+        public void Player1IsWinner_Ctor_ReturnsFalse()
+        {
+            var score = CreateGameScore();
+            Assert.False(score.Player1IsWinner);
+        }
+
+        [Fact]
+        public void Player2IsWinner_Ctor_ReturnsFalse()
+        {
+            var score = CreateGameScore();
+            Assert.False(score.Player2IsWinner);
+        }
+
+        [Fact]
         public void Player1Score_Player1ScoresOnce_Returns1()
         {
             var score = CreateGameScore()
@@ -194,8 +208,39 @@ namespace TennisDojo.Tests
                 .ScorePointsForPlayer2(1);
             Assert.True(score.Player2HasAdvantage);
         }
-    }
 
+        [Fact]
+        public void Player1IsWinner_Player1Scores4Points_ReturnsTrue()
+        {
+            var score = CreateGameScore()
+                .ScorePointsForPlayer1(4);
+            Assert.True(score.Player1IsWinner);
+        }
+
+        [Fact]
+        public void Player2IsWinner_Player1Scores4Points_ReturnsFalse()
+        {
+            var score = CreateGameScore()
+                .ScorePointsForPlayer1(4);
+            Assert.False(score.Player2IsWinner);
+        }
+
+        [Fact]
+        public void Player2IsWinner_Player2Scores4Points_ReturnsTrue()
+        {
+            var score = CreateGameScore()
+                .ScorePointsForPlayer2(4);
+            Assert.True(score.Player2IsWinner);
+        }
+
+        [Fact]
+        public void Player1IsWinner_Player2Scores4Points_ReturnsFalse()
+        {
+            var score = CreateGameScore()
+                .ScorePointsForPlayer2(4);
+            Assert.False(score.Player1IsWinner);
+        }
+    }
 
     public static class GameScoreExtensions
     {

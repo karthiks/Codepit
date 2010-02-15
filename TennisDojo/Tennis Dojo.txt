@@ -73,3 +73,13 @@ Final Deuce Tests
 		- New Score should be 2-3.
 		- Player 2 Has Advantage
 	- Both Easily Solved by Checking "IsDeuce".
+Winning Point Basic Tests
+	- Player1IsWinner = False on Ctor
+	- Player 1 Scores 4 Straight Points
+		- Player1IsWinner = True
+		- Player2IsWinner = False
+	- Player2IsWinner = False on Ctor
+	- Player 2 Scores 4 Straight Points
+		- Player1IsWinner = False
+		- Player2IsWinner = True
+	- 2x Magic Numbers - Replaced

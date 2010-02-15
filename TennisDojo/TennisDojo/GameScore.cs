@@ -1,7 +1,12 @@
+using System;
+
 namespace TennisDojo.Core
 {
     public class GameScore
     {
+        private const int DEUCE_POINTS = 3;
+        private const int WINNING_POINTS = 4;
+
         public int Player1Score { get; private set; }
         public int Player2Score { get; private set; }
 
@@ -17,7 +22,22 @@ namespace TennisDojo.Core
 
         public bool IsDeuce
         {
-            get { return (Player1Score == 3 && Player2Score == 3); }
+            get { return
+                (
+                    Player1Score == DEUCE_POINTS &&
+                    Player2Score == DEUCE_POINTS
+                );
+            }
+        }
+
+        public bool Player1IsWinner
+        {
+            get { return Player1Score == WINNING_POINTS; }
+        }
+
+        public bool Player2IsWinner
+        {
+            get { return Player2Score == WINNING_POINTS; }
         }
 
         public void Player1Scored()
@@ -48,7 +68,7 @@ namespace TennisDojo.Core
         {
             if (IsDeuce)
                 return false;
-            return score == 3;
+            return score == DEUCE_POINTS;
         }
     }
 }
