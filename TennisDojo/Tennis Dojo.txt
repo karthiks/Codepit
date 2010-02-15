@@ -45,3 +45,6 @@ Additional Basic Tests (Everything Up to "Advantage").
 	- Player 2 Scores 1 Points (0-1).
 	- Player 1 Scores 1, Player 2 Scores (1-1).
 	- Player 1 Scores 2, Player 2 Scores 2 (2-2).	
+	- Here I Updated Player 2 to Match Player 1 Score Property.
+	- These Tests Pass Easily Once "Player2Scored" Added.
+	- No Fail? We Can Prove the Tests Are "Good" by Altering Score.
