@@ -1,0 +1,28 @@
+Tennis Dojo
+===========
+
+- Tennis "Match"
+	- Create New Match
+		- Requires Two "Players"
+	- Start(Number of Sets)
+		- Number of "Sets" Must be 3 or 5.
+		- Returns a New "Set" (Cannot Create Set Without a Match)
+	- First "Player" to 3 or 5 "Sets" Wins the Match
+	- Once Match is "Won" New Sets Cannot Be Started.
+
+- "Sets"
+	- .CreateGame Returns a New "Game"
+	- Cannot Create More than 1 Game/Set...
+	- ... Unless Previous Game Completed
+
+- "Games"
+	- Played as Part of a "Set"
+	- "Player(s)" Score "Points"
+	- First to 4 Points (and 2 Points Lead - "Advantage") Wins the Game
+	- If Player Without Advantage Equalises, "Deuce".
+	- Non-Scoring Player in "Deuce" LOSES Point
+	  (Placing Other at "Advantage").
+	- "Score" Returns Current Game Score
+		- {Player1Points}:{Player2Points}
+		- "A" for Player with Advantage (e.g. "1:A")
+		- "Deuce" for Deuce
