@@ -48,3 +48,10 @@ Additional Basic Tests (Everything Up to "Advantage").
 	- Here I Updated Player 2 to Match Player 1 Score Property.
 	- These Tests Pass Easily Once "Player2Scored" Added.
 	- No Fail? We Can Prove the Tests Are "Good" by Altering Score.
+Basic "Advantage" Tests
+	- Both Players Do Not Have Advantage on Ctor
+		- Simplest Thing? Return False!
+	- Player 1 Scores 3x, Player 2 Zero = Player1HasAdvantage.
+		- Simplest Thing? Return Player1Score == 3.
+	- Player 2 Scores 3x, Player 1 Zero = Player2HasAdvantage.
+		- Simplest Thing? Return Player2Score == 3.

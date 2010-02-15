@@ -19,6 +19,14 @@ namespace TennisDojo.Tests
         }
 
         [Fact]
+        public void Ctor_NoPointsScored_BothPlayersDoNotHaveAdvantage()
+        {
+            var score = CreateGameScore();
+            Assert.False(score.Player1HasAdvantage);
+            Assert.False(score.Player2HasAdvantage);
+        }
+
+        [Fact]
         public void Player1Score_Player1ScoresOnce_Returns1()
         {
             var score = CreateGameScore()
@@ -84,6 +92,22 @@ namespace TennisDojo.Tests
                 .ScorePointsForPlayer1(2)
                 .ScorePointsForPlayer2(2);
             Assert.Equal(2, score.Player2Score);
+        }
+
+        [Fact]
+        public void Player1HasAdvantage_Player1Scores3xPlayer20_ReturnsTrue()
+        {
+            var score = CreateGameScore()
+                .ScorePointsForPlayer1(3);
+            Assert.True(score.Player1HasAdvantage);
+        }
+
+        [Fact]
+        public void Player2HasAdvantage_Player2Scores3xPlayer10_ReturnsTrue()
+        {
+            var score = CreateGameScore()
+                .ScorePointsForPlayer2(3);
+            Assert.True(score.Player2HasAdvantage);
         }
     }
 
