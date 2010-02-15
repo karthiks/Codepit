@@ -26,3 +26,11 @@ Tennis Dojo
 		- {Player1Points}:{Player2Points}
 		- "A" for Player with Advantage (e.g. "1:A")
 		- "Deuce" for Deuce
+		
+Completion Steps
+================
+
+START SIMPLE! What is the smallest/easiest thing to move this forward?
+For me, I think it will be to create the "Return Current Game Score". Having this will make checking the progress of "Games" easier.
+
+First Test, "Create a Game Score with 0 Points".
