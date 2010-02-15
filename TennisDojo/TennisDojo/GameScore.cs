@@ -1,5 +1,3 @@
-using System;
-
 namespace TennisDojo.Core
 {
     public class GameScore
@@ -24,12 +22,26 @@ namespace TennisDojo.Core
 
         public void Player1Scored()
         {
-            Player1Score++;
+            if (IsDeuce)
+            {
+                Player2Score--;
+            }
+            else
+            {
+                Player1Score++;
+            }
         }
 
         public void Player2Scored()
         {
-            Player2Score++;
+            if (IsDeuce)
+            {
+                Player1Score--;
+            }
+            else
+            {
+                Player2Score++;
+            }
         }
 
         private bool ScoreHasAdvantage(int score)

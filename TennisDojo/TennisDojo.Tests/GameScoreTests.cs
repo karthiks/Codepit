@@ -140,6 +140,60 @@ namespace TennisDojo.Tests
                 .SetDuece();
             Assert.True(score.IsDeuce);
         }
+
+        [Fact]
+        public void Player1Score_FromDuecePlayer1Scores_Returns3()
+        {
+            var score = CreateGameScore()
+                .SetDuece()
+                .ScorePointsForPlayer1(1);
+            Assert.Equal(3, score.Player1Score);
+        }
+
+        [Fact]
+        public void Player2Score_FromDuecePlayer1Scores_Returns2()
+        {
+            var score = CreateGameScore()
+                .SetDuece()
+                .ScorePointsForPlayer1(1);
+            Assert.Equal(2, score.Player2Score);
+        }
+
+        [Fact]
+        public void Player1HasAdvantage_FromDuecePlayer1Scores_ReturnsTrue()
+        {
+            var score = CreateGameScore()
+                .SetDuece()
+                .ScorePointsForPlayer1(1);
+            Assert.True(score.Player1HasAdvantage);
+        }
+
+        [Fact]
+        public void Player2Score_FromDuecePlayer2Scores_Returns3()
+        {
+            var score = CreateGameScore()
+                .SetDuece()
+                .ScorePointsForPlayer2(1);
+            Assert.Equal(3, score.Player2Score);
+        }
+
+        [Fact]
+        public void Player1Score_FromDuecePlayer2Scores_Returns2()
+        {
+            var score = CreateGameScore()
+                .SetDuece()
+                .ScorePointsForPlayer2(1);
+            Assert.Equal(2, score.Player1Score);
+        }
+
+        [Fact]
+        public void Player2HasAdvantage_FromDuecePlayer2Scores_ReturnsTrue()
+        {
+            var score = CreateGameScore()
+                .SetDuece()
+                .ScorePointsForPlayer2(1);
+            Assert.True(score.Player2HasAdvantage);
+        }
     }
 
 

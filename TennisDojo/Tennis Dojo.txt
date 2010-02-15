@@ -65,3 +65,11 @@ Basic "Deuce" Tests
 		- Reduce Code Dupe - New Extension Method - ToDeuce
 	- Player 2 Does Not Have Advantage in Deuce
 		- Update Getter to Use "ScoreHasAdvantage"
+Final Deuce Tests
+	- From Duece, Player 1 Scores
+		- New Score should be 3-2.
+		- Player 1 Has Advantage
+	- From Duece, Player 2 Scores
+		- New Score should be 2-3.
+		- Player 2 Has Advantage
+	- Both Easily Solved by Checking "IsDeuce".
