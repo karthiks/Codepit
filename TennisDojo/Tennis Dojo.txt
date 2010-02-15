@@ -34,3 +34,14 @@ START SIMPLE! What is the smallest/easiest thing to move this forward?
 For me, I think it will be to create the "Return Current Game Score". Having this will make checking the progress of "Games" easier.
 
 First Test, "Create a Game Score with 0 Points".
+	- Simply Create Some Public Fields in GameScore.
+Second Tests: "Player 1 Scores Point, Points Should be 1-0".
+	- Note We Are Testing 2x Things (1 and Nil) == 2 Tests
+	- To Pass, Simply Increment the Player1Score.
+	- I Set to "private set" Here - No Way to "Test".
+	- Note We Have Code Dupe (New GameScore, Player1Scores).
+	- I Created a Factory Method and Helper Extensions.
+Additional Basic Tests (Everything Up to "Advantage").
+	- Player 2 Scores 1 Points (0-1).
+	- Player 1 Scores 1, Player 2 Scores (1-1).
+	- Player 1 Scores 2, Player 2 Scores 2 (2-2).	
