@@ -7,14 +7,20 @@
 		${Html.ActionLink("<<Back", "Index", "Home")}
 	</p>
 		
-	<p class="intro">
-		This method uses the following code:
-	</p>
+	<div class="intro">
+		<p>This method uses the following code:</p>
+	</div>
 	
 	<div class="code">
 		<use content="code" />
 	</div>
 	
+	<div class="notes">
+		<p><em>Notes:</em></p>
+		<use content="notes" />
+	</div>
+	
+	<h3>Output</h3>
 	<use content="partial" />
 	
 </content>

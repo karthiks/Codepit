@@ -9,8 +9,12 @@ namespace SparkPartials.Controllers
 {
     public class ExamplesController : Controller
     {
-
         public ActionResult RenderPartial()
+        {
+            return View();
+        }
+
+        public ActionResult PartialName()
         {
             return View();
         }
