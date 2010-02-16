@@ -1,0 +1,20 @@
+﻿<use master="Application" />
+
+<content name="content">
+	
+	<h2><use content="title"/></h2>
+	<p>
+		${Html.ActionLink("<<Back", "Index", "Home")}
+	</p>
+		
+	<p class="intro">
+		This method uses the following code:
+	</p>
+	
+	<div class="code">
+		<use content="code" />
+	</div>
+	
+	<use content="partial" />
+	
+</content>

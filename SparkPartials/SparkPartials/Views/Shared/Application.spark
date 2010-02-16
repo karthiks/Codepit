@@ -1,4 +1,6 @@
-﻿<html>
+﻿<use namespace="System.Web.Mvc.Html" />
+
+<html>
 
 <head>
 	<title>Spark PartialViews</spark>

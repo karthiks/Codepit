@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
+using Spark;
 using Spark.Web.Mvc;
 
 namespace SparkPartials
@@ -30,7 +27,6 @@ namespace SparkPartials
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new SparkViewFactory());
 
-            AreaRegistration.RegisterAllAreas();
             RegisterRoutes(RouteTable.Routes);
         }
     }
