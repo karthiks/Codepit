@@ -35,12 +35,14 @@ For me, I think it will be to create the "Return Current Game Score". Having thi
 
 First Test, "Create a Game Score with 0 Points".
 	- Simply Create Some Public Fields in GameScore.
+
 Second Tests: "Player 1 Scores Point, Points Should be 1-0".
 	- Note We Are Testing 2x Things (1 and Nil) == 2 Tests
 	- To Pass, Simply Increment the Player1Score.
 	- I Set to "private set" Here - No Way to "Test".
 	- Note We Have Code Dupe (New GameScore, Player1Scores).
 	- I Created a Factory Method and Helper Extensions.
+
 Additional Basic Tests (Everything Up to "Advantage").
 	- Player 2 Scores 1 Points (0-1).
 	- Player 1 Scores 1, Player 2 Scores (1-1).
@@ -48,6 +50,7 @@ Additional Basic Tests (Everything Up to "Advantage").
 	- Here I Updated Player 2 to Match Player 1 Score Property.
 	- These Tests Pass Easily Once "Player2Scored" Added.
 	- No Fail? We Can Prove the Tests Are "Good" by Altering Score.
+
 Basic "Advantage" Tests
 	- Both Players Do Not Have Advantage on Ctor
 		- Simplest Thing? Return False!
@@ -55,6 +58,7 @@ Basic "Advantage" Tests
 		- Simplest Thing? Return Player1Score == 3.
 	- Player 2 Scores 3x, Player 1 Zero = Player2HasAdvantage.
 		- Simplest Thing? Return Player2Score == 3.
+
 Basic "Deuce" Tests
 	- IsDeuce == False on Ctor.
 		- Simply Return False.
@@ -65,6 +69,7 @@ Basic "Deuce" Tests
 		- Reduce Code Dupe - New Extension Method - ToDeuce
 	- Player 2 Does Not Have Advantage in Deuce
 		- Update Getter to Use "ScoreHasAdvantage"
+
 Final Deuce Tests
 	- From Duece, Player 1 Scores
 		- New Score should be 3-2.
@@ -73,6 +78,7 @@ Final Deuce Tests
 		- New Score should be 2-3.
 		- Player 2 Has Advantage
 	- Both Easily Solved by Checking "IsDeuce".
+
 Winning Point Basic Tests
 	- Player1IsWinner = False on Ctor
 	- Player 1 Scores 4 Straight Points
@@ -83,3 +89,13 @@ Winning Point Basic Tests
 		- Player1IsWinner = False
 		- Player2IsWinner = True
 	- 2x Magic Numbers - Replaced
+
+Tightening Up Winning Points
+	- Player1Scored Throws InvOpEx After Winning Point (Both Winning)
+	- Player2Scored Throws InvOpEx After Winning Point (Both Winning)
+	- WinningPointScored Event Raised on Player 1 Winning
+	- WinningPointScored Event Raised on Player 2 Winning
+	- WinningPointScored Event NOT Raised on Player 1 Scoring Non-Winning
+	- WinningPointScored Event NOT Raised on Player 2 Scoring Non-Winning
+	
+	- Added Extension Methods for Score Winning Point.

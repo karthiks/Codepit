@@ -42,6 +42,14 @@ namespace TennisDojo.Core
 
         public void Player1Scored()
         {
+            if (Player1Score == WINNING_POINTS)
+                throw new InvalidOperationException(
+                    "Player 1 Has Already One the Game");
+            
+            if (Player2Score == WINNING_POINTS)
+                throw new InvalidOperationException(
+                    "Player 2 Has Already One the Game");
+
             if (IsDeuce)
             {
                 Player2Score--;
@@ -50,10 +58,21 @@ namespace TennisDojo.Core
             {
                 Player1Score++;
             }
+
+            if (Player1Score == WINNING_POINTS)
+                InvokeWinningPointScored();
         }
 
         public void Player2Scored()
         {
+            if (Player1Score == WINNING_POINTS)
+                throw new InvalidOperationException(
+                    "Player 1 Has Already One the Game");
+
+            if (Player2Score == WINNING_POINTS)
+                throw new InvalidOperationException(
+                    "Player 2 Has Already One the Game");
+
             if (IsDeuce)
             {
                 Player1Score--;
@@ -62,6 +81,9 @@ namespace TennisDojo.Core
             {
                 Player2Score++;
             }
+
+            if (Player2Score == WINNING_POINTS)
+                InvokeWinningPointScored();
         }
 
         private bool ScoreHasAdvantage(int score)
@@ -69,6 +91,13 @@ namespace TennisDojo.Core
             if (IsDeuce)
                 return false;
             return score == DEUCE_POINTS;
+        }
+
+        public event Action WinningPointScored;
+        private void InvokeWinningPointScored()
+        {
+            Action scored = WinningPointScored;
+            if (scored != null) scored();
         }
     }
 }

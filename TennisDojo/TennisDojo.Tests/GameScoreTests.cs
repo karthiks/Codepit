@@ -1,3 +1,4 @@
+using System;
 using TennisDojo.Core;
 using Xunit;
 
@@ -240,6 +241,76 @@ namespace TennisDojo.Tests
                 .ScorePointsForPlayer2(4);
             Assert.False(score.Player1IsWinner);
         }
+
+        [Fact]
+        public void Player1Scored_Player1HasScored4Points_ThrowsInvOpEx()
+        {
+            var score = CreateGameScore()
+                .ScoreWinningPointForPlayer1();
+            Assert.Throws<InvalidOperationException>(
+                () => score.Player1Scored());
+        }
+
+        [Fact]
+        public void Player2Scored_Player1HasScored4Points_ThrowsInvOpEx()
+        {
+            var score = CreateGameScore()
+                .ScoreWinningPointForPlayer1();
+            Assert.Throws<InvalidOperationException>(
+                () => score.Player2Scored());
+        }
+
+        [Fact]
+        public void Player1Scored_Player2HasScored4Points_ThrowsInvOpEx()
+        {
+            var score = CreateGameScore()
+                .ScoreWinningPointForPlayer2();
+            Assert.Throws<InvalidOperationException>(
+                () => score.Player1Scored());
+        }
+
+        [Fact]
+        public void Player2Scored_Player2HasScored4Points_ThrowsInvOpEx()
+        {
+            var score = CreateGameScore()
+                .ScoreWinningPointForPlayer2();
+            Assert.Throws<InvalidOperationException>(
+                () => score.Player2Scored());
+        }
+
+        [Fact]
+        public void Player1Scored_WhenScoringWinningPoint_RaisesWinningPointScoredEvent()
+        {
+            var score = CreateGameScore()
+                .ScorePointsForPlayer1(3);
+            Assert.True(score.RaisesWinningPointScoredEvent(
+                s => s.Player1Scored()));
+        }
+
+        [Fact]
+        public void Player1Scored_WhenNotScoringWinningPoints_DoesNotRaiseWinningPointScoredEvent()
+        {
+            var score = CreateGameScore();
+            Assert.False(score.RaisesWinningPointScoredEvent(
+                s => s.Player1Scored()));
+        }
+
+        [Fact]
+        public void Player2Scored_WhenScoringWinningPoint_RaisesWinningPointScoredEvent()
+        {
+            var score = CreateGameScore()
+                .ScorePointsForPlayer2(3);
+            Assert.True(score.RaisesWinningPointScoredEvent(
+                s => s.Player2Scored()));
+        }
+
+        [Fact]
+        public void Player2Scored_WhenNotScoringWinningPoints_DoesNotRaiseWinningPointScoredEvent()
+        {
+            var score = CreateGameScore();
+            Assert.False(score.RaisesWinningPointScoredEvent(
+                s => s.Player2Scored()));
+        }
     }
 
     public static class GameScoreExtensions
@@ -267,6 +338,24 @@ namespace TennisDojo.Tests
             return score
                 .ScorePointsForPlayer1(3)
                 .ScorePointsForPlayer2(3);
+        }
+
+        public static GameScore ScoreWinningPointForPlayer1(this GameScore score)
+        {
+            return score.ScorePointsForPlayer1(4);
+        }
+
+        public static GameScore ScoreWinningPointForPlayer2(this GameScore score)
+        {
+            return score.ScorePointsForPlayer2(4);
+        }
+
+        public static bool RaisesWinningPointScoredEvent(this GameScore score, Action<GameScore> action)
+        {
+            var raised = false;
+            score.WinningPointScored += () => raised = true;
+            action(score);
+            return raised;
         }
     }
 }
