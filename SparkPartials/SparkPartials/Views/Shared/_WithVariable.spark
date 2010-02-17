@@ -1,3 +1,4 @@
 ﻿<p style="border: solid 1px #000; background: #ccc" >
-  This value is a variable: <em>${variable}</em>
+  String Variable: ${myString} <br />
+  Integer Variable: ${myInt}
 </p>

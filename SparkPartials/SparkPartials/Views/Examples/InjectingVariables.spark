@@ -7,10 +7,13 @@
 </content>
 
 <content name="notes">
-	Variables are consumed in the Partial using "code" syntax (e.g. "${H("${variableName}")}").<br />
-	
+	<ul>
+		<li>Variables are consumed in the Partial using "code" syntax (e.g. "${H("${variableName}")}").</li>
+		<li>Note that when referencing in the partial, type is not important.</li>
+		<li>Strings for "attribute" values must be wrapped in single-quotes.</li>
+	</ul>
 </content>
 	
 <content name="partial">
-	<WithVariable variable="some value" />
+	<WithVariable myString="'Some String Value'" myInt="42"  />
 </content>
