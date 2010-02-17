@@ -87,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Views\Examples\ComplexObjects.spark" />
+    <None Include="Views\Examples\ModelData.spark" />
     <None Include="Views\Examples\InjectingVariables.spark" />
     <None Include="Views\Examples\PartialName.spark" />
     <None Include="Views\Examples\RenderPartial.spark" />

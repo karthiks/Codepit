@@ -1,0 +1,23 @@
+﻿<use namespace="SparkPartials.Models" />
+
+<content name="title">
+	Model Data
+</content>
+
+<content name="code">
+	${H("<viewdata model=\"modelTypeName\" />")} <br/>
+	${H("${Model}")}
+</content>
+
+<content name="notes">
+	<ul>
+		<li>Note that "model" in the "viewdata" markup is lowercase "m" and in the C# code "Model" is uppercase "M".</li>
+		<li>Don't forget you can use ${H("<use namespace=\"SomeNamespace.Models\">")} to reference namespaces.</li>
+	</ul>
+</content>
+
+<viewdata model="User" />
+	
+<content name="partial">
+	<ComplexObject user="Model" />
+</content>

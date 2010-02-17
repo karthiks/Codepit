@@ -37,5 +37,16 @@ namespace SparkPartials.Controllers
             ViewData["userInfo"] = user;
             return View();
         }
+
+        public ActionResult ModelData()
+        {
+            var user = new User
+               {
+                   Name = "Rob",
+                   Email = "robcthegeek.public@gmail.com",
+                   Country = "England, UK"
+               };
+            return View(user);
+        }
     }
 }
