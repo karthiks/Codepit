@@ -5,8 +5,8 @@
 	<h2>Basics...</h2>
 	<ul>
 		<li>${Html.ActionLink("Using \"<render partial>\" Syntax", "RenderPartial", "Examples")}</li>
-		<li>${Html.ActionLink("Using \"partialName\" Syntax", "PartialName", "Examples") }</li>
-		<li>Injecting Variables</li>
+		<li>${Html.ActionLink("Using \"partialName\" Syntax", "PartialName", "Examples")}</li>
+		<li>${Html.ActionLink("Injecting Variables", "InjectingVariables", "Examples")}</li>
 		<li>Using Model Data</li>
 		<li>Complex Objects</li>
 	</ul>

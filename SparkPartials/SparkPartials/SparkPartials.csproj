@@ -85,10 +85,12 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Views\Examples\InjectingVariables.spark" />
     <None Include="Views\Examples\PartialName.spark" />
     <None Include="Views\Examples\RenderPartial.spark" />
     <None Include="Views\Home\Index.spark" />
     <None Include="Views\Shared\Application.spark" />
+    <None Include="Views\Shared\_WithVariable.spark" />
     <None Include="Views\Shared\Examples.spark" />
     <None Include="Views\Shared\_Basic.spark" />
   </ItemGroup>

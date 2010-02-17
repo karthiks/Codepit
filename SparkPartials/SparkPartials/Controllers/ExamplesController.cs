@@ -18,5 +18,10 @@ namespace SparkPartials.Controllers
         {
             return View();
         }
+
+        public ActionResult InjectingVariables()
+        {
+            return View();
+        }
     }
 }

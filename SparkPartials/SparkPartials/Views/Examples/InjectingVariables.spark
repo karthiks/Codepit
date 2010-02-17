@@ -1,0 +1,16 @@
+﻿<content name="title">
+	Injecting Variables into Partial
+</content>
+
+<content name="code">
+	${H("<partialName variableName=\"value\" />")}
+</content>
+
+<content name="notes">
+	Variables are consumed in the Partial using "code" syntax (e.g. "${H("${variableName}")}").<br />
+	
+</content>
+	
+<content name="partial">
+	<WithVariable variable="some value" />
+</content>
