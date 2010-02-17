@@ -8,7 +8,7 @@
 		<li>${Html.ActionLink("Using \"partialName\" Syntax", "PartialName", "Examples")}</li>
 		<li>${Html.ActionLink("Injecting Variables", "InjectingVariables", "Examples")}</li>
 		<li>Using Model Data</li>
-		<li>Complex Objects</li>
+		<li>${Html.ActionLink("Complex Objects", "ComplexObjects", "Examples")}</li>
 	</ul>
 
 </content>

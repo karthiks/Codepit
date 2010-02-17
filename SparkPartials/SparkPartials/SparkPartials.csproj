@@ -68,6 +68,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -85,18 +86,19 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Views\Examples\ComplexObjects.spark" />
     <None Include="Views\Examples\InjectingVariables.spark" />
     <None Include="Views\Examples\PartialName.spark" />
     <None Include="Views\Examples\RenderPartial.spark" />
     <None Include="Views\Home\Index.spark" />
     <None Include="Views\Shared\Application.spark" />
+    <None Include="Views\Shared\_ComplexObject.spark" />
     <None Include="Views\Shared\_WithVariable.spark" />
     <None Include="Views\Shared\Examples.spark" />
     <None Include="Views\Shared\_Basic.spark" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
