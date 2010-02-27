@@ -1,0 +1,11 @@
+﻿<html>
+
+<head>
+	<title><use content="title" /></title>
+	<link rel="stylesheet" type="text/css" href="~/content/core.css" />
+</head>
+
+<body>
+	<use content="body" />	
+</body>
+</html>
