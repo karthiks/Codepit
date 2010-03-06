@@ -1,0 +1,7 @@
+﻿<content name="title">Authorization Filter (Denied)</content>
+
+<content name="body">
+	<h1>Authorization Filter (Denied)</h1>
+	
+	<p>If you can see this, something has gone wrong!</p>
+</content>

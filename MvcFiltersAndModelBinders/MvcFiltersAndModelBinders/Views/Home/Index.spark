@@ -2,4 +2,8 @@
 
 <content name="body">
 	<h1>Home Page</h1>
+	
+	<ul>
+		<li>${Html.ActionLink("Filters", "Index", "Filters")}</li>
+	</ul>
 </content>

@@ -1,0 +1,10 @@
+﻿Create Custom Filter:
+	- Inherit from FilterAttribute (NOT Attribute)
+	- Implement 1 of 4 Interfaces
+		1. IAuthorizationFilter
+		2. IActionFilter
+		3. IResultFilter
+		4. IExceptionFilter
+
+Overview of Filters from @haacked:
+http://haacked.com/archive/2008/08/14/aspnetmvc-filters.aspx

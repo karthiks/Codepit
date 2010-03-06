@@ -1,0 +1,9 @@
+﻿<content name="title">Home</content>
+
+<content name="body">
+	<h1>Filters</h1>
+	
+	<ul>
+		<li>${Html.ActionLink("Authorization Filter (Denied)", "Denied", "Filters")}</li>
+	</ul>
+</content>
