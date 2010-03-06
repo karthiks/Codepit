@@ -10,7 +10,7 @@ namespace MvcFiltersAndModelBinders.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            return new RedirectResult("~/");
         }
 
 
@@ -22,6 +22,12 @@ namespace MvcFiltersAndModelBinders.Controllers
 
         [QueryStringAuthFilter]
         public ActionResult QueryString()
+        {
+            return View();
+        }
+
+        [RandomQuoteActionFilter]
+        public ActionResult RandomQuote()
         {
             return View();
         }

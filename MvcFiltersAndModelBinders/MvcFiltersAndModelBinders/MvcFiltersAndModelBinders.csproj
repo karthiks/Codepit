@@ -64,8 +64,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Filters\QuerStringAuthFilter.cs" />
+    <Compile Include="Models\Filters\QueryStringAuthFilter.cs" />
     <Compile Include="Models\Filters\DeniedFilter.cs" />
+    <Compile Include="Models\Filters\RandomQuoteActionFilter.cs" />
+    <Compile Include="Models\Quote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -85,9 +87,9 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Views\Filters\RandomQuote.spark" />
     <None Include="Views\Filters\QueryString.spark" />
     <None Include="Views\Filters\Denied.spark" />
-    <None Include="Views\Filters\Index.spark" />
     <None Include="Views\Home\Index.spark" />
     <None Include="Views\Shared\Application.spark" />
   </ItemGroup>

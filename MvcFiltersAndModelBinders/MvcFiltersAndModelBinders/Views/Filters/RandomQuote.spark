@@ -1,0 +1,16 @@
+﻿<use namespace="MvcFiltersAndModelBinders.Models" />
+
+<content name="title">Action Filter (Random Quotes)</content>
+
+<viewdata quote="Quote" />
+
+<content name="body">
+	<h1>Action Filter (Random Quotes)</h1>
+	
+	<div class="quote">
+		<blockquote>${quote.Content}</blockquote>
+		<em>${quote.Author}</em>
+	</div>
+	
+	<p>Hit F5/<a href="!{"javascript:window.location.reload()"}">Refresh</a> for Another Quote!</p>
+</content>

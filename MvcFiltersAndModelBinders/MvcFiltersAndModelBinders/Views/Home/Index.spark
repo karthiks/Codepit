@@ -1,9 +1,14 @@
-﻿<content name="title">Home</content>
+﻿<content name="title">Filters and Model Binders</content>
 
 <content name="body">
-	<h1>Home Page</h1>
+	<h1>Filters and Model Binders</h1>
+	
+	<h2>Filters</h2>
 	
 	<ul>
-		<li>${Html.ActionLink("Filters", "Index", "Filters")}</li>
+		<li>${Html.ActionLink("Authorization Filter (Denied)", "Denied", "Filters")}</li>
+		<li>${Html.ActionLink("Authorization Filter (QueryString, Not Passed)", "QueryString", "Filters")}</li>
+		<li>${Html.ActionLink("Authorization Filter (QueryString, Passed)", "QueryString", "Filters", new { pass = "OpenSesame" }, null)}</li>
+		<li>${Html.ActionLink("Action Filter (Random Quotes)", "RandomQuote", "Filters")}</li>
 	</ul>
 </content>
