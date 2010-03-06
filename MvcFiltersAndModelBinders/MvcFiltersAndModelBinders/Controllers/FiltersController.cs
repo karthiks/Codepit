@@ -19,5 +19,11 @@ namespace MvcFiltersAndModelBinders.Controllers
         {
             return View();
         }
+
+        [QueryStringAuthFilter]
+        public ActionResult QueryString()
+        {
+            return View();
+        }
     }
 }

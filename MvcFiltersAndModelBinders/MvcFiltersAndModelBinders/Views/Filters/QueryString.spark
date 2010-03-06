@@ -1,0 +1,7 @@
+﻿<content name="title">Authorization Filter (QueryString)</content>
+
+<content name="body">
+	<h1>Authorization Filter (QueryString)</h1>
+	
+	<p>If you can see this, then you should have a QueryString value of "pass = OpenSesame"!</p>
+</content>

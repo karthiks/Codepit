@@ -5,5 +5,7 @@
 	
 	<ul>
 		<li>${Html.ActionLink("Authorization Filter (Denied)", "Denied", "Filters")}</li>
+		<li>${Html.ActionLink("Authorization Filter (QueryString, Not Passed)", "QueryString", "Filters")}</li>
+		<li>${Html.ActionLink("Authorization Filter (QueryString, Passed)", "QueryString", new { pass = "OpenSesame"} , "Filters")}</li>
 	</ul>
 </content>

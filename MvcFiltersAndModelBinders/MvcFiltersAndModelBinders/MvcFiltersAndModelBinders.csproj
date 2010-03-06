@@ -64,6 +64,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Filters\QuerStringAuthFilter.cs" />
     <Compile Include="Models\Filters\DeniedFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -84,6 +85,7 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Views\Filters\QueryString.spark" />
     <None Include="Views\Filters\Denied.spark" />
     <None Include="Views\Filters\Index.spark" />
     <None Include="Views\Home\Index.spark" />
