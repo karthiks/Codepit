@@ -18,14 +18,14 @@ namespace MvcFiltersAndModelBinders.Controllers
         [AcceptVerbs(HttpVerbs.Get)]
         public ActionResult Colour()
         {
-            var existing = Session["colour"] ?? new Banner(Color.White, "Hello World!");
+            var existing = Session["banner"] ?? new Banner(Color.White, "Hello World!");
             return View(existing);
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Colour(Color colour)
+        public ActionResult Colour(Banner banner)
         {
-            Session["colour"] = colour;
+            Session["banner"] = banner;
             return new RedirectResult("~/binders/colour");
         }
     }

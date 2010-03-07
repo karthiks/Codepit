@@ -19,16 +19,22 @@
 <content name="body">
 	<h1>Colour Model Binder</h1>
 	
+	<h2 style="color: ${"#" + Model.Colour.ToHex()}; opacity: ${Model.Colour.A.ToCssOpacity()}">${Model.Text}</h2>
+	
 	<p>Current Colour Information Set:</p>
 	
 	<form method="post">
 		<label for="color">Colour:</label>
-		<input type="text" id="color" name="color" value="${"#" + Model.Colour.ToHex()}" />
+		<input type="text" id="color" name="colour" value="${"#" + Model.Colour.ToHex()}" />
 		<br />
 		<label for="alpha">Alpha:</label>
 		<input type="text" name="alpha" value="${"#" + Model.Colour.A.ToHex()}" />
 		<br />
-		<input type="submit" value="Update Colour" />
+		
+		<label for="alpha">Text:</label>
+		<input type="text" name="text" value="${Model.Text}" />
+		<br />
+		<input type="submit" value="Update Banner" />
 	</form>
 	<div id="colorpicker"></div>
 	

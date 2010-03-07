@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using MvcFiltersAndModelBinders.Models;
 using Spark;
 using Spark.Web.Mvc;
 
@@ -33,6 +34,7 @@ namespace MvcFiltersAndModelBinders
         protected void Application_Start()
         {
             RegisterRoutes(RouteTable.Routes);
+            ModelBinders.Binders.Add(typeof(Banner), new BannerModelBinder());
         }
     }
 }
