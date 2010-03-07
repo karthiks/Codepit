@@ -1,0 +1,36 @@
+﻿<use namespace="MvcFiltersAndModelBinders.Models" />
+<viewdata model="Banner" />
+
+<content name="head">
+	<!-- Uses Color Picker from http://acko.net/dev/farbtastic -->
+	<script type="text/javascript" src="~/scripts/jquery-1.3.2.min.js"></script>
+	<script type="text/javascript" src="~/scripts/farbtastic.js"></script>
+	<link rel="stylesheet" href="~/content/farbtastic.css" type="text/css" />
+	
+	<script type="text/javascript">
+	  $(document).ready(function() {
+		$('#colorpicker').farbtastic('#color');
+	  });
+	</script>
+</content>
+
+<content name="title">Colour Model Binder</content>
+
+<content name="body">
+	<h1>Colour Model Binder</h1>
+	
+	<p>Current Colour Information Set:</p>
+	
+	<form method="post">
+		<label for="color">Colour:</label>
+		<input type="text" id="color" name="color" value="${"#" + Model.Colour.ToHex()}" />
+		<br />
+		<label for="alpha">Alpha:</label>
+		<input type="text" name="alpha" value="${"#" + Model.Colour.A.ToHex()}" />
+		<br />
+		<input type="submit" value="Update Colour" />
+	</form>
+	<div id="colorpicker"></div>
+	
+	<p>Special thanks to <a href="http://acko.net/dev/farbtastic">Steven Wittens</a> for the Colour Picker jQuery Plugin.</p>
+</content>

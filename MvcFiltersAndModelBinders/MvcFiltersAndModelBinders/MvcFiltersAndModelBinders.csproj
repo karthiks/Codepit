@@ -57,6 +57,7 @@
     <Reference Include="System.Web.Mobile" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\BindersController.cs" />
     <Compile Include="Controllers\FiltersController.cs" />
     <Compile Include="Controllers\HomeController.cs">
       <SubType>Code</SubType>
@@ -64,6 +65,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Banner.cs" />
+    <Compile Include="Models\ColorExtensions.cs" />
     <Compile Include="Models\Filters\QueryStringAuthFilter.cs" />
     <Compile Include="Models\Filters\DeniedFilter.cs" />
     <Compile Include="Models\Filters\RandomQuoteActionFilter.cs" />
@@ -72,9 +75,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\core.css" />
+    <Content Include="Content\farbtastic.css" />
+    <Content Include="Content\marker.png" />
+    <Content Include="Content\mask.png" />
+    <Content Include="Content\wheel.png" />
     <Content Include="Global.asax" />
     <Content Include="Lib\Spark.dll" />
     <Content Include="Lib\Spark.Web.Mvc.dll" />
+    <Content Include="Scripts\farbtastic.js" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-1.3.2.js" />
     <Content Include="Scripts\jquery-1.3.2.min.js" />
@@ -87,6 +95,7 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Views\Binders\Colour.spark" />
     <None Include="Views\Filters\RandomQuote.spark" />
     <None Include="Views\Filters\QueryString.spark" />
     <None Include="Views\Filters\Denied.spark" />

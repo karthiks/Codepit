@@ -11,4 +11,10 @@
 		<li>${Html.ActionLink("Authorization Filter (QueryString, Passed)", "QueryString", "Filters", new { pass = "OpenSesame" }, null)}</li>
 		<li>${Html.ActionLink("Action Filter (Random Quotes)", "RandomQuote", "Filters")}</li>
 	</ul>
+	
+	<h2>Model Binders</h2>
+	
+	<ul>
+		<li>${Html.ActionLink("Colour Model Binder", "Colour", "Binders")}</li>
+	</ul>
 </content>

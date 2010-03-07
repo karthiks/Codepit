@@ -4,6 +4,8 @@
 <head>
 	<title><use content="title" /></title>
 	<link rel="stylesheet" type="text/css" href="~/content/core.css" />
+	
+	<use content="head" />
 </head>
 
 <body>
