@@ -1,0 +1,25 @@
+﻿<use namespace="System.Web.Mvc.Html" />
+
+<html>
+
+<head>
+	<title>Spark PartialViews</spark>
+	<link rel="stylesheet" href="../content/core.css" />
+</head>
+<body>
+	
+	<div id="wrapper">
+	
+		<div id="header">
+			<h1>Spark PartialViews</h1>
+			<hr />
+		</div>
+		
+		<div id="content">
+			<use content="content" />
+		</div>
+	
+	</div>
+	
+</body>
+</hmtl>

@@ -1,0 +1,15 @@
+﻿<content name="title">
+	PartialName Method
+</content>
+
+<content name="code">
+	${H("<partialName />")}
+</content>
+
+<content name="notes">
+	The preferred method for using Partial's. Note we don't need the underscore prefix.
+</content>
+	
+<content name="partial">
+	<Basic />
+</content>

@@ -1,0 +1,14 @@
+﻿<use namespace="System.Web.Mvc.Html" />
+
+<content name="content">
+
+	<h2>Basics...</h2>
+	<ul>
+		<li>${Html.ActionLink("Using \"<render partial>\" Syntax", "RenderPartial", "Examples")}</li>
+		<li>${Html.ActionLink("Using \"partialName\" Syntax", "PartialName", "Examples")}</li>
+		<li>${Html.ActionLink("Injecting Variables", "InjectingVariables", "Examples")}</li>
+		<li>${Html.ActionLink("Using Model Data", "ModelData", "ExampleS")}</li>
+		<li>${Html.ActionLink("Complex Objects", "ComplexObjects", "Examples")}</li>
+	</ul>
+
+</content>

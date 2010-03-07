@@ -1,0 +1,22 @@
+﻿<use namespace="SparkPartials.Models" />
+
+<content name="title">
+	Complex Objects in a Partial
+</content>
+
+<content name="code">
+	${H("<partialName variableName=\"complexObjectReference\" />")}
+</content>
+
+<content name="notes">
+	<ul>
+		<li>The important bit is the signature of the variable names and properties on that variable.</li>
+		<li>Same rules for ${Html.ActionLink("Using \"partialName\" Syntax", "PartialName", "Examples")} applies.</li>
+	</ul>
+</content>
+
+<viewdata userInfo="User" />
+	
+<content name="partial">
+	<ComplexObject user="userInfo" />
+</content>

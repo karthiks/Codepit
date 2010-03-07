@@ -1,0 +1,15 @@
+﻿<content name="title">
+	RenderPartial Method
+</content>
+
+<content name="code">
+	${H("<render partial=\"_partialName\" />")}
+</content>
+
+<content name="notes">
+	We need to use the underscore prefix to reference the Partial.
+</content>
+	
+<content name="partial">
+	<render partial="_Basic" />
+</content>
